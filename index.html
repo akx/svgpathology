@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Pathology</title>
+	<script src="./lib/mithril.js"></script>
+	<style>
+		html {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		header {
+			display: flex;
+		}
+		header input {
+			flex: 1;
+		}
+		svg {
+			background: #f0f0f0;
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		let d = 'M0,0 L100,100';
+		let style = 'stroke: black';
+	const view = () => [
+		m('header', [
+			m('input', {value: d, oninput: (e) => {d = e.target.value;}}),
+			m('input', {value: style, oninput: (e) => {style = e.target.value;}}),
+		]),
+		m('svg', m('path', {style, d})),
+	];
+	m.mount(document.body, {view});
+	</script>
+</body>
+</html>
