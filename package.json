@@ -6,6 +6,6 @@
   "author": "Aarni Koskela <akx@iki.fi>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^3.6.2"
   }
 }
